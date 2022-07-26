@@ -1,7 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sozler_app/product/widgets/password_form_field.dart';
 import 'package:sozler_app/screens/form/register_page.dart';
@@ -17,6 +15,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordControllers = TextEditingController();
   User user = User(email: "atalhaablak@gmail.com", password: "12345678");
   String? username;
   String? password;
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
         image: AssetImage("assets/image/background_image.jpeg"),
         fit: BoxFit.cover,
@@ -72,8 +72,8 @@ class _LoginPageState extends State<LoginPage> {
       key: _formKey,
       child: Column(
         children: [
-          EmailFormField(),
-          PasswordFormFields(),
+          EmailFormField(emailController: emailController),
+          PasswordFormFields(passwordController: passwordControllers),
         ],
       ),
     );
@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: () {
           if (_formKey.currentState!.validate()) {
             _formKey.currentState!.save();
-            if (formemail == user.email && formpassword == user.password) {
+            if (emailController.text == user.email && passwordControllers.text == user.password) {
               print("Giriş başarılı");
             } else {
               print("Kullanıcı bilgileri eşleşmedi");

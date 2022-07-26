@@ -1,9 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 String? formuserName;
 
 class UserFormField extends StatefulWidget {
-  const UserFormField({Key? key}) : super(key: key);
+  TextEditingController userController;
+  UserFormField({
+    Key? key,
+    required this.userController,
+  }) : super(key: key);
 
   @override
   State<UserFormField> createState() => _UserFormFieldState();
@@ -14,6 +19,7 @@ class _UserFormFieldState extends State<UserFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.userController,
       keyboardType: TextInputType.emailAddress,
       decoration: const InputDecoration(
         labelText: "Kullanıcı Adı",

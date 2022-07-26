@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sozler_app/models/users.dart';
@@ -15,6 +14,9 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController userController = TextEditingController();
   final String imageUrl = "assets/image/person.jpeg";
   final _formKey = GlobalKey<FormState>();
   @override
@@ -71,9 +73,9 @@ class _RegisterPageState extends State<RegisterPage> {
       key: _formKey,
       child: Column(
         children: [
-          const UserFormField(),
-          const EmailFormField(),
-          PasswordFormFields(),
+          UserFormField(userController: userController),
+          EmailFormField(emailController: emailController),
+          PasswordFormFields(passwordController: passwordController),
         ],
       ),
     );

@@ -1,9 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 String? formpassword;
 
 class PasswordFormFields extends StatefulWidget {
-  PasswordFormFields({Key? key}) : super(key: key);
+  TextEditingController passwordController;
+  PasswordFormFields({
+    Key? key,
+    required this.passwordController,
+  }) : super(key: key);
 
   @override
   State<PasswordFormFields> createState() => _PasswordFormFieldsState();
@@ -22,6 +27,7 @@ class _PasswordFormFieldsState extends State<PasswordFormFields> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.passwordController,
       obscureText: _isVisible ? true : false,
       decoration: InputDecoration(
           labelText: "Password",

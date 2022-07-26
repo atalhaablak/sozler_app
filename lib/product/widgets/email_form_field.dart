@@ -1,9 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 String? formemail;
 
 class EmailFormField extends StatefulWidget {
-  const EmailFormField({Key? key}) : super(key: key);
+  TextEditingController emailController;
+  EmailFormField({
+    Key? key,
+    required this.emailController,
+  }) : super(key: key);
 
   @override
   State<EmailFormField> createState() => _EmailFormFieldState();
@@ -14,6 +19,7 @@ class _EmailFormFieldState extends State<EmailFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.emailController,
       keyboardType: TextInputType.emailAddress,
       decoration: const InputDecoration(
         labelText: "Email",
