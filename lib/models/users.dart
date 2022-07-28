@@ -1,9 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class User {
+  final String ad;
   final String email;
   final String password;
 
-  User({required this.email, required this.password});
+  User({
+    required this.email,
+    required this.password,
+    required this.ad,
+  });
 
   List<User> usersList = [];
 

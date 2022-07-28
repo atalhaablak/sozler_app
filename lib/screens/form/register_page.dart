@@ -91,8 +91,9 @@ class _RegisterPageState extends State<RegisterPage> {
           onPressed: () {
             if (_formKey.currentState!.validate()) {
               _formKey.currentState!.save();
-              new User(email: formemail!, password: formpassword!);
-              debugPrint("kullanıcıadı: $formuserName\n email: $formemail\n password: $formpassword");
+              new User(ad: userController.text, email: emailController.text, password: passwordController.text);
+              debugPrint(
+                  "kullanıcıadı: ${userController.text}\n email:${emailController.text}\n password: ${passwordController.text}");
             }
           },
           child: Text(

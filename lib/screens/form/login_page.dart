@@ -17,7 +17,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordControllers = TextEditingController();
-  User user = User(email: "atalhaablak@gmail.com", password: "12345678");
+  User user = User(ad: "Ahmet Talha Ablak", email: "atalhaablak@gmail.com", password: "12345678");
   String? username;
   String? password;
   String? email;

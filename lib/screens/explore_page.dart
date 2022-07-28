@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sozler_app/product/widgets/custom_appBar.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _ExplorePageState extends State<ExplorePage> {
           child: Column(
             children: [
               // AppBar Sağda Geri Solda Zil
-              _pageAppBar(),
+              CustomAppBar(onPressed: () {}),
               SizedBox(height: 30),
               // Keşfet başlığı yanında filtrele butonu
               Padding(
@@ -61,18 +62,6 @@ class _ExplorePageState extends State<ExplorePage> {
                 child: Text("Filtrele", style: GoogleFonts.crimsonPro(fontSize: 16, fontWeight: FontWeight.bold)),
               ),
             ])),
-      ],
-    );
-  }
-
-  Row _pageAppBar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        TextButton(
-            onPressed: () {},
-            child: Text("Geri", style: GoogleFonts.crimsonPro(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black))),
-        IconButton(onPressed: () {}, icon: Icon(Icons.notifications_none_outlined)),
       ],
     );
   }
