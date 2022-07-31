@@ -34,7 +34,7 @@ class _ProfilePageState extends State<ProfilePage> with TickerProviderStateMixin
                   Stack(
                     children: [
                       // AppBar
-                      CustomAppBar(onPressed: () {}),
+                      CustomAppBar(onPressed: () {}, color: Colors.white),
                       // Profil fotoğrafı
                       const Padding(
                         padding: const EdgeInsets.only(top: 20),

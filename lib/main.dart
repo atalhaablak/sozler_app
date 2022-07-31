@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sozler_app/screens/everydar_word.dart';
 import 'package:sozler_app/screens/explore_page.dart';
 import 'package:sozler_app/screens/form/login_page.dart';
 import 'package:sozler_app/screens/form/register_page.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
+      home: EverydayWord(),
     );
   }
 }

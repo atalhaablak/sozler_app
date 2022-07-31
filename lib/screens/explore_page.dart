@@ -21,7 +21,7 @@ class _ExplorePageState extends State<ExplorePage> {
           child: Column(
             children: [
               // AppBar Sağda Geri Solda Zil
-              CustomAppBar(onPressed: () {}),
+              CustomAppBar(onPressed: () {}, color: Colors.black),
               SizedBox(height: 30),
               // Keşfet başlığı yanında filtrele butonu
               Padding(
