@@ -22,7 +22,7 @@ class EverydayWord extends StatelessWidget {
             child: _pageAppBar(),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.2,
+            bottom: MediaQuery.of(context).size.height * 0.3,
             child: Padding(
               padding: const EdgeInsets.only(left: 20),
               child: _writerandWord(),
@@ -31,51 +31,55 @@ class EverydayWord extends StatelessWidget {
           Positioned(
             bottom: 65,
             width: MediaQuery.of(context).size.width * 1,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 3,
-                    ),
-                  ),
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.favorite,
-                        color: Colors.white,
-                        size: 50,
-                      )),
-                ),
-                SizedBox(width: 40),
-                Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 3,
-                    ),
-                  ),
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.share,
-                        color: Colors.white,
-                        size: 50,
-                      )),
-                ),
-              ],
-            ),
+            child: _FavoriteandShareButtons(),
           ),
         ],
       ),
+    );
+  }
+
+  Row _FavoriteandShareButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: 80,
+          height: 80,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: Colors.white,
+              width: 3,
+            ),
+          ),
+          child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.favorite,
+                color: Colors.white,
+                size: 50,
+              )),
+        ),
+        SizedBox(width: 40),
+        Container(
+          width: 80,
+          height: 80,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: Colors.white,
+              width: 3,
+            ),
+          ),
+          child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.share,
+                color: Colors.white,
+                size: 50,
+              )),
+        ),
+      ],
     );
   }
 
